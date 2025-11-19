@@ -42,6 +42,7 @@ namespace lb8 {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private:
 		/// <summary>
@@ -56,6 +57,7 @@ namespace lb8 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -63,6 +65,8 @@ namespace lb8 {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -83,7 +87,7 @@ namespace lb8 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label2->ForeColor = System::Drawing::Color::OrangeRed;
-			this->label2->Location = System::Drawing::Point(76, 90);
+			this->label2->Location = System::Drawing::Point(25, 87);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(141, 22);
 			this->label2->TabIndex = 1;
@@ -93,7 +97,7 @@ namespace lb8 {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox1->Location = System::Drawing::Point(254, 87);
+			this->textBox1->Location = System::Drawing::Point(204, 87);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(135, 28);
 			this->textBox1->TabIndex = 2;
@@ -104,9 +108,9 @@ namespace lb8 {
 				static_cast<System::Byte>(204)));
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 20;
-			this->listBox1->Location = System::Drawing::Point(116, 139);
+			this->listBox1->Location = System::Drawing::Point(29, 135);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(219, 244);
+			this->listBox1->Size = System::Drawing::Size(172, 244);
 			this->listBox1->TabIndex = 3;
 			// 
 			// button1
@@ -115,7 +119,7 @@ namespace lb8 {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::Color::Linen;
-			this->button1->Location = System::Drawing::Point(453, 152);
+			this->button1->Location = System::Drawing::Point(207, 154);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(193, 54);
 			this->button1->TabIndex = 4;
@@ -129,7 +133,7 @@ namespace lb8 {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button2->ForeColor = System::Drawing::Color::Linen;
-			this->button2->Location = System::Drawing::Point(453, 231);
+			this->button2->Location = System::Drawing::Point(207, 229);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(193, 54);
 			this->button2->TabIndex = 5;
@@ -143,7 +147,7 @@ namespace lb8 {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button3->ForeColor = System::Drawing::Color::Linen;
-			this->button3->Location = System::Drawing::Point(453, 315);
+			this->button3->Location = System::Drawing::Point(207, 303);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(193, 54);
 			this->button3->TabIndex = 6;
@@ -151,12 +155,23 @@ namespace lb8 {
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(406, 50);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(479, 421);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 7;
+			this->pictureBox1->TabStop = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Linen;
-			this->ClientSize = System::Drawing::Size(773, 432);
+			this->ClientSize = System::Drawing::Size(868, 476);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -166,6 +181,7 @@ namespace lb8 {
 			this->Controls->Add(this->label1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
